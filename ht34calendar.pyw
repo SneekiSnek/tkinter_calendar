@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkcalendar import *
+import datetime as dt
 
 root = tk.Tk()
 root.geometry("500x500")
@@ -11,8 +12,12 @@ rootCanvas = tk.Canvas(root)
 rootCanvas.pack(fill=tk.BOTH, expand=True)
 TK_SILENCE_DEPRECATION=1
 
+today = str(dt.date.today())
+today_list = today.split("-")
+for i in range(len(today_list)):
+    today_list[i] = int(today_list[i])
 
-cal = Calendar(root, selectmode="day", year=2023, month=11, day=8)
+cal = Calendar(root, selectmode="day", year=today_list[0], month=today_list[1], day=today_list[2])
 cal.pack(pady=20)
 
 def grab_date():
@@ -24,7 +29,8 @@ gd_button.pack(pady=20)
 gd_label = Label(root, text="")
 gd_label.pack(pady=20)
 
-root.config(bg="#ffffff")
+
+
 
 
 root.mainloop()
