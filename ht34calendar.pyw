@@ -22,6 +22,7 @@ cal.pack(pady=20)
 
 def grab_date():
     gd_label.config(text=cal.get_date())
+    print (cal.get_date())
 
 gd_button = Button(root, text="Get date", command=grab_date)
 gd_button.pack(pady=20)
