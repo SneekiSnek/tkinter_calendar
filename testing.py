@@ -10,5 +10,5 @@ day = int(today_list[2])
 
 print ( year, month, day )
 
-yday = (dt.date.toordinal(dt.date.today())) - ((year - 1) * 365.242)
+yday = int((dt.date.toordinal(dt.date.today())) - ((year - 1) * 365.242))
 print (yday)
