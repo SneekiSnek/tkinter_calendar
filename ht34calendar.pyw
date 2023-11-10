@@ -27,8 +27,7 @@ cal.pack(pady=20)
 def grab_date():
     gd_label.config(text=cal.get_date())
     year = today_list[0]
-    gn_label.config(text= namnsdagar_data[int((dt.date.toordinal(dt.datetime.strptime(cal.get_date(), "%m/%d/%y"))) - ((year - 1) * 365.242))]) 
-    print (cal.get_date())
+    gn_label.config(text= namnsdagar_data[int((dt.date.toordinal(dt.datetime.strptime(cal.get_date(), "%m/%d/%y"))) - ((year - 1) * 365.242))])
 
 gd_button = Button(root, text="Get date", command=grab_date)
 gd_button.pack(pady=20)
